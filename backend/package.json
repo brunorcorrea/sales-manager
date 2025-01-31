@@ -1,0 +1,15 @@
+{
+  "name": "sells-manager-backend",
+  "version": "1.0.0",
+  "description": "This project intent is to serve a REST API to the Web Application of Sells Manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "correaricardobruno@gmail.com",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
