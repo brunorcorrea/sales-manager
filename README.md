@@ -1,6 +1,6 @@
-# Sells Manager
+# Sales Manager
 
-This project is a web application to manage sells, expenses, and goals. It main goal is to help the user to keep track of their sells, expenses, and goals.
+This project is a web application to manage sales, expenses, and goals. It main goal is to help the user to keep track of their sales, expenses, and goals.
 
 ## Customer Requirements
 

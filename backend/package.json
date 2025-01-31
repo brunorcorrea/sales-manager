@@ -1,7 +1,7 @@
 {
-  "name": "sells-manager-backend",
+  "name": "sales-manager-backend",
   "version": "1.0.0",
-  "description": "This project intent is to serve a REST API to the Web Application of Sells Manager",
+  "description": "This project intent is to serve a REST API to the Web Application of Sales Manager",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
