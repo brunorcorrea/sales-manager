@@ -22,7 +22,7 @@ This project is a web application to manage sales, expenses, and goals. It main 
 - [ ] The system must allow the user to set goals.
 - [ ] The system must allow the user to see a graph of the goals.
 - [ ] The system must allow the user to see the amount needed to reach the goal.
-- [ ] The system must allow the user to see the amount needed to reach the goal on the next day.
+- [ ] The system must allow the user to see the amount needed to reach the goal on the month.
 
 ### Business Entities
 
@@ -39,7 +39,7 @@ This project is a web application to manage sales, expenses, and goals. It main 
 - [ ] Set Goals
 - [ ] See Graph of Goals
 - [ ] See Amount Needed to Reach Goal
-- [ ] See Amount Needed to Reach Goal on the Next Day
+- [ ] See Amount Needed to Reach Goal on the Month
 
 ## Technical Requirements
 
@@ -49,6 +49,9 @@ This project is a web application to manage sales, expenses, and goals. It main 
 - [ ] The system must use a database to store the data.
 - [ ] The system must have a REST API.
 - [ ] The system must have a user interface to interact with the user.
+
+## Optional Requirements
+
 - [ ] The system must have a user authentication mechanism.
 - [ ] The system must have a user authorization mechanism.
 - [ ] The system must be multi-tenant.
