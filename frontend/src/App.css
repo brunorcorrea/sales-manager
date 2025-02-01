@@ -107,3 +107,8 @@ footer {
   transform: translateX(-50%);
   color: #666;
 }
+
+.unstyled-link {
+  text-decoration: none;
+  color: inherit;
+}

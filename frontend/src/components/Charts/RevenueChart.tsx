@@ -21,7 +21,7 @@ const RevenueChart = () => {
     xaxis: {
       categories: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
     },
-  };
+  } as ApexCharts.ApexOptions;
 
   const series = [
     {

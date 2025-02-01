@@ -10,7 +10,7 @@ function GoalsChart() {
       colors: ["#e187bc"],
     },
     labels: ["Goals"],
-  };
+  } as ApexCharts.ApexOptions;
 
   const series = [56];
 
