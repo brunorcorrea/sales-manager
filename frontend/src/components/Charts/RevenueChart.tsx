@@ -1,7 +1,31 @@
 import Chart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const RevenueChart = () => {
-  const options = {
+  const [data, setData] = useState([{ id: 0, month: "", year: "", revenue: 0 }]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const BASE_URL = "http://localhost:3001";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/api/v1/revenues`);
+        setData(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError("Erro ao carregar os dados da receita.");
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const options: ApexOptions = {
     chart: {
       type: "line",
       zoom: {
@@ -19,16 +43,19 @@ const RevenueChart = () => {
       colors: ["#e187bc"],
     },
     xaxis: {
-      categories: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+      categories: data.map((item) => item.month + "/" + item.year),
     },
-  } as ApexCharts.ApexOptions;
+  };
 
   const series = [
     {
-      name: "Revenue",
-      data: [10, 41, 35, 51, 49, 62, 69, 91, 148, 100, 150, 200],
+      name: "Receita",
+      data: data.map((item) => item.revenue),
     },
   ];
+
+  if (loading) return <p>Carregando dados...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div id="revenue-chart-container">

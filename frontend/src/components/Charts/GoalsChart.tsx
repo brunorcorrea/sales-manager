@@ -1,7 +1,8 @@
 import Chart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
 
 function GoalsChart() {
-  const options = {
+  const options: ApexOptions = {
     chart: {
       type: "radialBar",
     },
