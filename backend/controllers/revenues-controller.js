@@ -1,4 +1,29 @@
-let revenues = [];
+let revenues = [
+    {
+        "id": 1,
+        "month": "January",
+        "year": 2024,
+        "revenue": 125
+    },
+    {
+        "id": 2,
+        "month": "February",
+        "year": 2024,
+        "revenue": 200
+    },
+    {
+        "id": 3,
+        "month": "March",
+        "year": 2024,
+        "revenue": 108
+    },
+    {
+        "id": 3,
+        "month": "April",
+        "year": 2024,
+        "revenue": 175
+    }
+];
 
 const getAllRevenues = (req, res) => {
     res.json(revenues);
