@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const RevenueChart = () => {
   const [data, setData] = useState([{ id: 0, month: "", year: "", revenue: 0 }]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   const BASE_URL = "http://localhost:3001";
 
