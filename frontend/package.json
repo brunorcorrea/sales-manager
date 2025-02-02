@@ -3,15 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://brunorcorrea.github.io/sales-manager",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
     "apexcharts": "^4.4.0",
     "axios": "^1.7.9",
+    "gh-pages": "^6.3.0",
     "react": "^18.3.1",
     "react-apexcharts": "^1.7.0",
     "react-dom": "^18.3.1",
