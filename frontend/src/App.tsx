@@ -7,11 +7,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/sales" element={<NotFoundPage />} />
-        <Route path="/profit" element={<NotFoundPage />} />
-        <Route path="/expenses" element={<NotFoundPage />} />
-        <Route path="/goals" element={<NotFoundPage />} />
+        <Route path="/sales-manager/" element={<Dashboard />} />
+        <Route path="/sales-manager/sales" element={<NotFoundPage />} />
+        <Route path="/sales-manager/profit" element={<NotFoundPage />} />
+        <Route path="/sales-manager/expenses" element={<NotFoundPage />} />
+        <Route path="/sales-manager/goals" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
