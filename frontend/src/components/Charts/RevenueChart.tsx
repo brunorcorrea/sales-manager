@@ -1,19 +1,17 @@
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { getAllRevenues } from "../../api/Api";
 
 const RevenueChart = () => {
   const [data, setData] = useState([{ id: 0, month: "", year: "", revenue: 0 }]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const BASE_URL = "http://localhost:3001";
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/api/v1/revenues`);
+        const response = await getAllRevenues();
         setData(response.data);
         setLoading(false);
       } catch (err) {
