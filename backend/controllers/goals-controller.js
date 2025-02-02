@@ -1,4 +1,11 @@
-let goals = [];
+let goals = [
+    {
+        id: 1,
+        type: 'Vendas',
+        current: 45,
+        target: 240,
+    }
+];
 
 const getAllGoals = (req, res) => {
     res.json(goals);

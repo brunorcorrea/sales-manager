@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-console.log(import.meta.env.VITE_BASE_URL_API);
+
 const api = axios.create({
     baseURL: `${import.meta.env.VITE_BASE_URL_API}` || "http://localhost:3001",
 });
@@ -13,4 +13,13 @@ const getAllRevenues = async (): Promise<AxiosResponse> => {
     }
 };
 
-export { getAllRevenues };
+const getAllGoals = async (): Promise<AxiosResponse> => {
+    try {
+        const response = await api.get('/api/v1/goals');
+        return response;
+    } catch (err) {
+        throw new Error("Erro ao carregar os dados da meta.");
+    }
+}
+
+export { getAllRevenues, getAllGoals };
