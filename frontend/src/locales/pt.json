@@ -1,0 +1,17 @@
+{
+  "menu.dashboard": "Painel",
+  "menu.sales": "Vendas",
+  "menu.profit": "Lucro",
+  "menu.expenses": "Despesas",
+  "menu.goals": "Metas",
+  "error.loading.revenue": "Erro ao carregar dados de receita",
+  "revenue.title": "Receita",
+  "loading.data": "Carregando dados...",
+  "revenue.chart.title": "Receita",
+  "error.loading.goals": "Erro ao carregar dados de metas",
+  "goals.chart.title": "Metas",
+  "goal.chart.legend.current": "Atual",
+  "goal.chart.legend.target": "Meta",
+  "username.placeholder": "Nome de usuário",
+  "page.not.found": "Página não encontrada"
+}

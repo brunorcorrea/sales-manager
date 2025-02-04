@@ -2,8 +2,10 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { useEffect, useState } from "react";
 import { getAllRevenues } from "../../api/Api";
+import { useTranslation } from "react-i18next";
 
 const RevenueChart = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState([{ id: 0, month: "", year: "", revenue: 0 }]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -15,7 +17,7 @@ const RevenueChart = () => {
         setData(response.data);
         setLoading(false);
       } catch (err) {
-        setError("Erro ao carregar os dados da receita.");
+        setError(t("error.loading.revenue"));
         setLoading(false);
       }
     };
@@ -47,17 +49,17 @@ const RevenueChart = () => {
 
   const series = [
     {
-      name: "Receita",
+      name: t("revenue.title"),
       data: data.map((item) => item.revenue),
     },
   ];
 
-  if (loading) return <p>Carregando dados...</p>;
+  if (loading) return <p>{t("loading.data")}</p>;
   if (error) return <p>{error}</p>;
 
   return (
     <div id="revenue-chart-container">
-      <h2>Revenue Chart</h2>
+      <h2>{t("revenue.chart.title")}</h2>
       <Chart options={options} series={series} type="line" height={350} />
     </div>
   );

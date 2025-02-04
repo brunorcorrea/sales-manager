@@ -2,8 +2,10 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { useEffect, useState } from "react";
 import { getAllGoals } from "../../api/Api";
+import { useTranslation } from "react-i18next";
 
 function GoalsChart() {
+  const { t } = useTranslation();
   const [data, setData] = useState([{ current: 0, target: 0, type: "" }]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -15,7 +17,7 @@ function GoalsChart() {
         setData(response.data);
         setLoading(false);
       } catch (err) {
-        setError("Erro ao carregar os dados da meta.");
+        setError(t("error.loading.goals"));
         setLoading(false);
       }
     };
@@ -38,20 +40,20 @@ function GoalsChart() {
 
   const series = [(100 * firstGoal.current) / firstGoal.target];
 
-  if (loading) return <p>Carregando dados...</p>;
+  if (loading) return <p>{t("loading.data")}</p>;
   if (error) return <p>{error}</p>;
 
   return (
     <div id="goals-chart-container">
-      <h2>Goals Chart</h2>
+      <h2>{t("goals.chart.title")}</h2>
       <Chart options={options} series={series} type="radialBar" height={350} />
       <div>
         <div>
-          <strong>Current: </strong>
+          <strong>{t("goal.chart.legend.current")}: </strong>
           <span>{firstGoal.current}</span>
         </div>
         <div>
-          <strong>Target: </strong>
+          <strong>{t("goal.chart.legend.target")}: </strong>
           <span>{firstGoal.target}</span>
         </div>
       </div>

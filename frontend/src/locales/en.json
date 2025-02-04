@@ -1,0 +1,17 @@
+{
+  "menu.dashboard": "Dashboard",
+  "menu.sales": "Sales",
+  "menu.profit": "Profit",
+  "menu.expenses": "Expenses",
+  "menu.goals": "Goals",
+  "error.loading.revenue": "Error loading revenue data",
+  "revenue.title": "Revenue",
+  "loading.data": "Loading data...",
+  "revenue.chart.title": "Revenue",
+  "error.loading.goals": "Error loading goals data",
+  "goals.chart.title": "Goals",
+  "goal.chart.legend.current": "Current",
+  "goal.chart.legend.target": "Target",
+  "username.placeholder": "Username",
+  "page.not.found": "Page not found"
+}
