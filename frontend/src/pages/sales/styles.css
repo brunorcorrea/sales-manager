@@ -1,0 +1,113 @@
+.sales-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sales-header {
+  display: flex;
+  justify-content: flex-end;
+  width: 75%;
+  margin-bottom: 10px;
+}
+
+#create-sale-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#create-sale-button h5 {
+  margin-left: 8px;
+}
+
+.sales-table {
+  width: 75%;
+  overflow-x: auto;
+}
+
+.sales-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.sales-table th,
+.sales-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+.sales-table th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.sales-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+.edit-btn {
+  color: #007bff;
+}
+
+.delete-btn {
+  color: #dc3545;
+}
+
+.sales-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.total-value {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.pagination {
+  display: flex;
+  gap: 5px;
+}
+
+.page-btn {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.page-btn.active {
+  background-color: var(--accent-color);
+  color: white;
+  border: 1px solid var(--accent-color);
+}
+
+.page-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

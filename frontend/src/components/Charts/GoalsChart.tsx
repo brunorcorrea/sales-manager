@@ -49,11 +49,11 @@ function GoalsChart() {
       <Chart options={options} series={series} type="radialBar" height={350} />
       <div>
         <div>
-          <strong>{t("goal.chart.legend.current")}: </strong>
+          <strong>{t("goals.chart.legend.current")}: </strong>
           <span>{firstGoal.current}</span>
         </div>
         <div>
-          <strong>{t("goal.chart.legend.target")}: </strong>
+          <strong>{t("goals.chart.legend.target")}: </strong>
           <span>{firstGoal.target}</span>
         </div>
       </div>

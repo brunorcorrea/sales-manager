@@ -22,4 +22,13 @@ const getAllGoals = async (): Promise<AxiosResponse> => {
     }
 }
 
-export { getAllRevenues, getAllGoals };
+const getAllSales = async (): Promise<AxiosResponse> => {
+    try {
+        const response = await api.get('/api/v1/sales');
+        return response;
+    } catch (err) {
+        throw new Error("Erro ao carregar os dados das vendas.");
+    }
+}
+
+export { getAllRevenues, getAllGoals, getAllSales };

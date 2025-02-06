@@ -1,17 +1,57 @@
 {
-  "menu.dashboard": "Dashboard",
-  "menu.sales": "Sales",
-  "menu.profit": "Profit",
-  "menu.expenses": "Expenses",
-  "menu.goals": "Goals",
-  "error.loading.revenue": "Error loading revenue data",
-  "revenue.title": "Revenue",
-  "loading.data": "Loading data...",
-  "revenue.chart.title": "Revenue",
-  "error.loading.goals": "Error loading goals data",
-  "goals.chart.title": "Goals",
-  "goal.chart.legend.current": "Current",
-  "goal.chart.legend.target": "Target",
-  "username.placeholder": "Username",
-  "page.not.found": "Page not found"
+  "menu": {
+    "dashboard": "Dashboard",
+    "sales": "Sales",
+    "profit": "Profit",
+    "expenses": "Expenses",
+    "goals": "Goals"
+  },
+  "error": {
+    "loading": {
+      "revenue": "Error loading revenue data",
+      "goals": "Error loading goals data",
+      "sales": "Error loading sales data"
+    }
+  },
+  "revenue": {
+    "title": "Revenue",
+    "chart": {
+      "title": "Revenue"
+    }
+  },
+  "loading": {
+    "data": "Loading data..."
+  },
+  "goals": {
+    "chart": {
+      "title": "Goals",
+      "legend": {
+        "current": "Current",
+        "target": "Target"
+      }
+    }
+  },
+  "username": {
+    "placeholder": "Username"
+  },
+  "page": {
+    "not": {
+      "found": "Page not found"
+    }
+  },
+  "sales": {
+    "create": {
+      "button": "Create Sale"
+    },
+    "table": {
+      "date": "Date",
+      "quantity": "Quantity Sold",
+      "value": "Value",
+      "actions": "Actions"
+    },
+    "total": "Total",
+    "page": "Page",
+    "prev": "Previous",
+    "next": "Next"
+  }
 }

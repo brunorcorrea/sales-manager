@@ -1,17 +1,57 @@
 {
-  "menu.dashboard": "Painel",
-  "menu.sales": "Vendas",
-  "menu.profit": "Lucro",
-  "menu.expenses": "Despesas",
-  "menu.goals": "Metas",
-  "error.loading.revenue": "Erro ao carregar dados de receita",
-  "revenue.title": "Receita",
-  "loading.data": "Carregando dados...",
-  "revenue.chart.title": "Receita",
-  "error.loading.goals": "Erro ao carregar dados de metas",
-  "goals.chart.title": "Metas",
-  "goal.chart.legend.current": "Atual",
-  "goal.chart.legend.target": "Meta",
-  "username.placeholder": "Nome de usuário",
-  "page.not.found": "Página não encontrada"
+  "menu": {
+    "dashboard": "Painel",
+    "sales": "Vendas",
+    "profit": "Lucro",
+    "expenses": "Despesas",
+    "goals": "Metas"
+  },
+  "error": {
+    "loading": {
+      "revenue": "Erro ao carregar dados de receita",
+      "goals": "Erro ao carregar dados de metas",
+      "sales": "Erro ao carregar dados de vendas"
+    }
+  },
+  "revenue": {
+    "title": "Receita",
+    "chart": {
+      "title": "Receita"
+    }
+  },
+  "loading": {
+    "data": "Carregando dados..."
+  },
+  "goals": {
+    "chart": {
+      "title": "Metas",
+      "legend": {
+        "current": "Atual",
+        "target": "Meta"
+      }
+    }
+  },
+  "username": {
+    "placeholder": "Nome de usuário"
+  },
+  "page": {
+    "not": {
+      "found": "Página não encontrada"
+    }
+  },
+  "sales": {
+    "create": {
+      "button": "Criar Venda"
+    },
+    "table": {
+      "date": "Data",
+      "quantity": "Quantidade Vendida",
+      "value": "Valor",
+      "actions": "Ações"
+    },
+    "total": "Total",
+    "page": "Página",
+    "prev": "Anterior",
+    "next": "Próximo"
+  }
 }
