@@ -7,7 +7,6 @@
   margin-top: 20px;
 }
 
-/* Botão Criar Venda */
 .sales-header {
   display: flex;
   justify-content: flex-end;
@@ -31,7 +30,6 @@
   margin-left: 8px;
 }
 
-/* Estilizando a tabela */
 .sales-table {
   width: 75%;
   overflow-x: auto;
@@ -50,7 +48,7 @@
 }
 
 .sales-table th {
-  background-color: #333;
+  background-color: var(--primary-color);
   color: white;
 }
 
@@ -58,7 +56,6 @@
   background-color: #f2f2f2;
 }
 
-/* Botões de ação */
 .edit-btn,
 .delete-btn {
   border: none;
@@ -76,7 +73,6 @@
   color: #dc3545;
 }
 
-/* Rodapé da Tabela */
 .sales-footer {
   display: flex;
   justify-content: space-between;
@@ -86,13 +82,12 @@
 }
 
 .total-value {
-  background-color: #333;
+  background-color: var(--primary-color);
   color: white;
-  padding: 5px 10px;
+  padding: 2px 4px;
   border-radius: 4px;
 }
 
-/* Paginação Customizada */
 .pagination {
   display: flex;
   gap: 5px;
@@ -107,8 +102,9 @@
 }
 
 .page-btn.active {
-  background-color: #007bff;
+  background-color: var(--accent-color);
   color: white;
+  border: 1px solid var(--accent-color);
 }
 
 .page-btn:disabled {

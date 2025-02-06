@@ -9,7 +9,8 @@
   "error": {
     "loading": {
       "revenue": "Erro ao carregar dados de receita",
-      "goals": "Erro ao carregar dados de metas"
+      "goals": "Erro ao carregar dados de metas",
+      "sales": "Erro ao carregar dados de vendas"
     }
   },
   "revenue": {

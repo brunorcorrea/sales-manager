@@ -1,34 +1,37 @@
-import SidebarMenu from "../components/SideBarMenu";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import SidebarMenu from "../../components/SideBarMenu";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { FaPlus, FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
-import "./Sales.css";
+import { getAllSales } from "../../api/Api";
+import "./styles.css";
 
 const Sales = () => {
   const { t } = useTranslation();
-  const [salesData, setSalesData] = useState([]);
+  const [salesData, setSalesData] = useState([{ id: 0, value: 0, quantity: 0, date: "" }]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 4;
 
   useEffect(() => {
     const fetchData = async () => {
-      const fakeData = Array(128)
-        .fill()
-        .map((_, i) => ({
-          id: i + 1,
-          date: "04/02/2025",
-          quantity: 20,
-          value: "R$ 125,50",
-        }));
-      setSalesData(fakeData);
+      try {
+        const response = await getAllSales();
+        setSalesData(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError(t("error.loading.sales"));
+        setLoading(false);
+      }
     };
+
     fetchData();
   }, []);
 
   const totalPages = Math.ceil(salesData.length / itemsPerPage);
-  const totalSales = salesData.reduce((sum, item) => sum + item.quantity, 0);
+  const totalSales = salesData.length;
 
   const paginatedSales = salesData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
@@ -45,6 +48,7 @@ const Sales = () => {
             </button>
           </div>
 
+          {/* TODO Move the table to a component */}
           <div className="sales-table">
             <table>
               <thead>

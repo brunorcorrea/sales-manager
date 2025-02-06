@@ -9,7 +9,8 @@
   "error": {
     "loading": {
       "revenue": "Error loading revenue data",
-      "goals": "Error loading goals data"
+      "goals": "Error loading goals data",
+      "sales": "Error loading sales data"
     }
   },
   "revenue": {
