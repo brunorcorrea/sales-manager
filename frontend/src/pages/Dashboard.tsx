@@ -9,7 +9,7 @@ const Dashboard = () => {
     <>
       <Header />
       <div id="main-container">
-        <SidebarMenu />
+        <SidebarMenu currentPageName="menu.dashboard" />
         <main id="main-content">
           <RevenueChart />
           <GoalsChart />

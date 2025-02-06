@@ -10,7 +10,7 @@ const NotFoundPage = () => {
     <>
       <Header />
       <div id="main-container">
-        <SidebarMenu />
+        <SidebarMenu currentPageName="page.not.found" />
         <h1>{t("page.not.found")}</h1>
       </div>
       <Footer />

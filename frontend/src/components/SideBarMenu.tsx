@@ -2,13 +2,17 @@ import { Link } from "react-router-dom";
 import { FaCartShopping, FaSackDollar, FaMoneyBill1, FaBullseye, FaChartLine } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 
-const SidebarMenu = () => {
+interface SidebarMenuProps {
+  currentPageName: string;
+}
+
+const SidebarMenu = (props: SidebarMenuProps) => {
   const { t } = useTranslation();
   const BASE_PATH = import.meta.env.VITE_BASE_PATH_FRONTEND || "/sales-manager/";
 
   return (
     <aside id="left-panel">
-      <h1>{t("menu.dashboard")}</h1>
+      <h1>{t(props.currentPageName)}</h1>
       <div id="menu">
         <Link to={BASE_PATH} className="unstyled-link">
           <div id="dashboard-button" className="menu-button">
