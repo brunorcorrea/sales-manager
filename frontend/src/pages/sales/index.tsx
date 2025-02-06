@@ -49,79 +49,83 @@ const Sales = () => {
           </div>
 
           {/* TODO Move the table to a component */}
-          <div className="sales-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>{t("sales.table.date")}</th>
-                  <th>{t("sales.table.quantity")}</th>
-                  <th>{t("sales.table.value")}</th>
-                  <th>{t("sales.table.actions")}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {paginatedSales.map((sale) => (
-                  <tr key={sale.id}>
-                    <td>{sale.date}</td>
-                    <td>{sale.quantity}</td>
-                    <td>{sale.value}</td>
-                    <td>
-                      <button className="edit-btn">
-                        <FaPencilAlt />
-                      </button>
-                      <button className="delete-btn">
-                        <FaTrashAlt />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {!loading && !error && (
+            <>
+              <div className="sales-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>{t("sales.table.date")}</th>
+                      <th>{t("sales.table.quantity")}</th>
+                      <th>{t("sales.table.value")}</th>
+                      <th>{t("sales.table.actions")}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {paginatedSales.map((sale) => (
+                      <tr key={sale.id}>
+                        <td>{sale.date}</td>
+                        <td>{sale.quantity}</td>
+                        <td>{sale.value}</td>
+                        <td>
+                          <button className="edit-btn">
+                            <FaPencilAlt />
+                          </button>
+                          <button className="delete-btn">
+                            <FaTrashAlt />
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
 
-          <div className="sales-footer">
-            <p>
-              {t("sales.total")}: <span className="total-value">{totalSales}</span>
-            </p>
+              <div className="sales-footer">
+                <p>
+                  {t("sales.total")}: <span className="total-value">{totalSales}</span>
+                </p>
 
-            <div className="pagination">
-              <button className="page-btn" disabled={currentPage === 1} onClick={() => setCurrentPage(1)}>
-                «
-              </button>
-              <button
-                className="page-btn"
-                disabled={currentPage === 1}
-                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-              >
-                {t("sales.prev")}
-              </button>
+                <div className="pagination">
+                  <button className="page-btn" disabled={currentPage === 1} onClick={() => setCurrentPage(1)}>
+                    «
+                  </button>
+                  <button
+                    className="page-btn"
+                    disabled={currentPage === 1}
+                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                  >
+                    {t("sales.prev")}
+                  </button>
 
-              {Array.from({ length: totalPages }, (_, i) => (
-                <button
-                  key={i}
-                  className={`page-btn ${currentPage === i + 1 ? "active" : ""}`}
-                  onClick={() => setCurrentPage(i + 1)}
-                >
-                  {i + 1}
-                </button>
-              )).slice(currentPage - 1, currentPage + 4)}
+                  {Array.from({ length: totalPages }, (_, i) => (
+                    <button
+                      key={i}
+                      className={`page-btn ${currentPage === i + 1 ? "active" : ""}`}
+                      onClick={() => setCurrentPage(i + 1)}
+                    >
+                      {i + 1}
+                    </button>
+                  )).slice(currentPage - 1, currentPage + 4)}
 
-              <button
-                className="page-btn"
-                disabled={currentPage === totalPages}
-                onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-              >
-                {t("sales.next")}
-              </button>
-              <button
-                className="page-btn"
-                disabled={currentPage === totalPages}
-                onClick={() => setCurrentPage(totalPages)}
-              >
-                »
-              </button>
-            </div>
-          </div>
+                  <button
+                    className="page-btn"
+                    disabled={currentPage === totalPages}
+                    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                  >
+                    {t("sales.next")}
+                  </button>
+                  <button
+                    className="page-btn"
+                    disabled={currentPage === totalPages}
+                    onClick={() => setCurrentPage(totalPages)}
+                  >
+                    »
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
         </main>
       </div>
       <Footer />
