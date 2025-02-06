@@ -1,4 +1,70 @@
-let sales = [];
+let sales = [
+    {
+        "id": 1,
+        "value": 10.65,
+        "quantity": 3,
+        "date": "16/06/2024",
+        "place": "Av. Paulista",
+        "paymentMethods": {
+            "creditCard": 0,
+            "debitCard": 0,
+            "cash": 0,
+            "pix": 3
+        }
+    },
+    {
+        "id": 2,
+        "value": 139.05,
+        "quantity": 35,
+        "date": "28/05/2024",
+        "place": "Centro de Limeira",
+        "paymentMethods": {
+            "creditCard": 0,
+            "debitCard": 0,
+            "cash": 2,
+            "pix": 33
+        }
+    },
+    {
+        "id": 3,
+        "value": 120.24,
+        "quantity": 37,
+        "date": "06/05/2024",
+        "place": "Av. Paulista",
+        "paymentMethods": {
+            "creditCard": 0,
+            "debitCard": 0,
+            "cash": 2,
+            "pix": 35
+        }
+    },
+    {
+        "id": 4,
+        "value": 66.27,
+        "quantity": 21,
+        "date": "19/02/2024",
+        "place": "Av. Paulista",
+        "paymentMethods": {
+            "creditCard": 0,
+            "debitCard": 0,
+            "cash": 14,
+            "pix": 7
+        }
+    },
+    {
+        "id": 5,
+        "value": 82.64,
+        "quantity": 26,
+        "date": "25/12/2024",
+        "place": "Centro de Limeira",
+        "paymentMethods": {
+            "creditCard": 0,
+            "debitCard": 0,
+            "cash": 8,
+            "pix": 18
+        }
+    }
+];
 
 const getAllSales = (req, res) => {
     res.json(sales);
