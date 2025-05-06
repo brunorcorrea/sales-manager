@@ -1,4 +1,4 @@
-# Sales Manager
+# [Sales Manager](https://brunorcorrea.github.io/sales-manager/sales)
 
 This project is a web application to manage sales, expenses, and goals. It main goal is to help the user to keep track of their sales, expenses, and goals.
 
