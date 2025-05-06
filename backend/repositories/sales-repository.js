@@ -49,4 +49,27 @@ const findOne = async (id) => {
   }
 };
 
-export { findMany, findOne, create };
+const update = async (id, sale) => {
+  try {
+    const query = `
+            UPDATE sales_manager.sales
+            SET price = $1, date = $2, location = $3, payment_methods = $4
+            WHERE id = $5
+            RETURNING *
+        `;
+    const values = [
+      sale.price,
+      sale.date,
+      sale.location,
+      JSON.stringify(sale.paymentMethods),
+      id,
+    ];
+    const response = await client.query(query, values);
+    return response.rows[0];
+  } catch (error) {
+    console.error("Error updating sale:", error);
+    return null;
+  }
+};
+
+export { findMany, findOne, create, update };
