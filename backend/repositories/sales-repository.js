@@ -14,6 +14,27 @@ const findMany = async () => {
   }
 };
 
+const create = async (sale) => {
+  try {
+    const query = `
+            INSERT INTO sales_manager.sales (price, date, location, payment_methods)
+            VALUES ($1, $2, $3, $4)
+            RETURNING *
+            `;
+    const values = [
+      sale.price,
+      sale.date,
+      sale.location,
+      JSON.stringify(sale.paymentMethods),
+    ];
+    const response = await client.query(query, values);
+    return response.rows[0];
+  } catch (error) {
+    console.error("Error creating sale:", error);
+    return null;
+  }
+};
+
 const findOne = async (id) => {
   try {
     const query = `
@@ -28,4 +49,4 @@ const findOne = async (id) => {
   }
 };
 
-export { findMany, findOne };
+export { findMany, findOne, create };

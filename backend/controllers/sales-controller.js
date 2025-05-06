@@ -66,18 +66,23 @@ let sales = [
   },
 ];
 
-import { findMany, findOne } from "../repositories/sales-repository.js";
+import { create, findMany, findOne } from "../repositories/sales-repository.js";
 
-const getAllSales = async (req, res) => {
+const getAllSales = async (_, res) => {
   const sales = await findMany();
   res.json(sales);
 };
 
-const createSale = (req, res) => {
-  const sale = { ...req.body, id: sales.length + 1 };
+const createSale = async (req, res) => {
+  const sale = { ...req.body };
 
-  sales.push(sale);
-  res.status(201).json(sale);
+  const createdSale = await create(sale);
+
+  if (!createdSale) {
+    return res.status(400).json({ message: "Error creating sale" });
+  }
+
+  res.status(201).json(createdSale);
 };
 
 const getSaleById = async (req, res) => {
