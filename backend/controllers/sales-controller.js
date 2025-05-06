@@ -66,7 +66,7 @@ let sales = [
   },
 ];
 
-import { findMany } from "../repositories/sales-repository.js";
+import { findMany, findOne } from "../repositories/sales-repository.js";
 
 const getAllSales = async (req, res) => {
   const sales = await findMany();
@@ -80,9 +80,10 @@ const createSale = (req, res) => {
   res.status(201).json(sale);
 };
 
-const getSaleById = (req, res) => {
+const getSaleById = async (req, res) => {
   const { id } = req.params;
-  const sale = sales.find((sale) => sale.id === Number(id));
+
+  const sale = await findOne(id);
 
   if (!sale) {
     return res.status(404).json({ message: "Sale not found" });
