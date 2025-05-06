@@ -66,11 +66,11 @@ let sales = [
   },
 ];
 
-import client from "../db.js";
+import { findMany } from "../repositories/sales-repository.js";
 
 const getAllSales = async (req, res) => {
-  const sales = await client.query("SELECT * FROM sales_manager.sales");
-  res.json(sales.rows);
+  const sales = await findMany();
+  res.json(sales);
 };
 
 const createSale = (req, res) => {
