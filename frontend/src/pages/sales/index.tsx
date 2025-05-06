@@ -6,10 +6,11 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import { getAllSales } from "../../api/Api";
 import "./styles.css";
+import { format, parseISO } from "date-fns";
 
 const Sales = () => {
   const { t } = useTranslation();
-  const [salesData, setSalesData] = useState([{ id: 0, value: 0, quantity: 0, date: "" }]);
+  const [salesData, setSalesData] = useState([{ id: 0, price: 0, location: "", date: "" }]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -56,17 +57,17 @@ const Sales = () => {
                   <thead>
                     <tr>
                       <th>{t("sales.table.date")}</th>
-                      <th>{t("sales.table.quantity")}</th>
-                      <th>{t("sales.table.value")}</th>
+                      <th>{t("sales.table.location")}</th>
+                      <th>{t("sales.table.price")}</th>
                       <th>{t("sales.table.actions")}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {paginatedSales.map((sale) => (
                       <tr key={sale.id}>
-                        <td>{sale.date}</td>
-                        <td>{sale.quantity}</td>
-                        <td>{sale.value}</td>
+                        <td>{format(parseISO(sale.date), 'dd/MM/yyyy')}</td>
+                        <td>{sale.location}</td>
+                        <td>{sale.price}</td>
                         <td>
                           <button className="edit-btn">
                             <FaPencilAlt />
@@ -83,7 +84,7 @@ const Sales = () => {
 
               <div className="sales-footer">
                 <p>
-                  {t("sales.total")}: <span className="total-value">{totalSales}</span>
+                  {t("sales.total")}: <span className="total-price">{totalSales}</span>
                 </p>
 
                 <div className="pagination">

@@ -45,8 +45,8 @@
     },
     "table": {
       "date": "Date",
-      "quantity": "Quantity Sold",
-      "value": "Value",
+      "location": "Location",
+      "price": "price",
       "actions": "Actions"
     },
     "total": "Total",
