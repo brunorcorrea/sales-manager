@@ -66,7 +66,7 @@ let sales = [
   },
 ];
 
-import { create, findMany, findOne, update } from "../repositories/sales-repository.js";
+import { create, findMany, findOne, updateOne, deleteOne } from "../repositories/sales-repository.js";
 
 const getAllSales = async (_, res) => {
   const sales = await findMany();
@@ -105,7 +105,7 @@ const updateSale = async (req, res) => {
     return res.status(404).json({ message: "Sale not found" });
   }
 
-  const updatedSale = await update(id, req.body);
+  const updatedSale = await updateOne(id, req.body);
 
   if (!updatedSale) {
     return res.status(400).json({ message: "Error updating sale" });
@@ -114,17 +114,17 @@ const updateSale = async (req, res) => {
   res.json(updatedSale);
 };
 
-const deleteSale = (req, res) => {
+const deleteSale = async (req, res) => {
   const { id } = req.params;
-  const sale = sales.find((sale) => sale.id === Number(id));
+  const sale = await findOne(id);
 
   if (!sale) {
     return res.status(404).json({ message: "Sale not found" });
   }
 
-  sales = sales.filter((sale) => sale.id !== Number(id));
+  const deletedSale = await deleteOne(id);
 
-  res.json(sale);
+  res.json(deletedSale);
 };
 
 export { getAllSales, createSale, getSaleById, updateSale, deleteSale };

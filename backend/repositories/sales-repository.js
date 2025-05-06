@@ -49,7 +49,7 @@ const findOne = async (id) => {
   }
 };
 
-const update = async (id, sale) => {
+const updateOne = async (id, sale) => {
   try {
     const query = `
             UPDATE sales_manager.sales
@@ -72,4 +72,19 @@ const update = async (id, sale) => {
   }
 };
 
-export { findMany, findOne, create, update };
+const deleteOne = async (id) => {
+  try {
+    const query = `
+            DELETE FROM sales_manager.sales
+            WHERE id = $1
+            RETURNING *
+        `;
+    const response = await client.query(query, [id]);
+    return response.rows[0];
+  } catch (error) {
+    console.error("Error deleting sale:", error);
+    return null;
+  }
+};
+
+export { findMany, findOne, create, updateOne, deleteOne };
