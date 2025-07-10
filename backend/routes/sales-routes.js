@@ -1,4 +1,6 @@
 import express from 'express';
+import passport from 'passport';
+
 import { getAllSales, createSale, getSaleById, updateSale, deleteSale } from '../controllers/sales-controller.js';
 
 const router = express.Router();
@@ -11,7 +13,7 @@ const FIND_SALE_BY_ID_URL = `/v1${BASE_URL}${ID_PATH}`;
 const UPDATE_SALE_URL = `/v1${BASE_URL}${ID_PATH}`;
 const DELETE_SALE_URL = `/v1${BASE_URL}${ID_PATH}`;
 
-router.get(LIST_SALES_URL, getAllSales);
+router.get(LIST_SALES_URL, passport.authenticate(),    getAllSales);
 router.post(CREATE_SALE_URL, createSale);
 router.get(FIND_SALE_BY_ID_URL, getSaleById);
 router.put(UPDATE_SALE_URL, updateSale);
