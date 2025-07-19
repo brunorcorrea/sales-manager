@@ -4,6 +4,7 @@ import salesRoutes from './routes/sales-routes.js';
 import revenuesRoutes from './routes/revenues-routes.js';
 import goalsRoutes from './routes/goals-routes.js';
 import authRoutes from './routes/auth-routes.js';
+import './auth-config.js';
 
 const app = express();
 
