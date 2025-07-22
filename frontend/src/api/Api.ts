@@ -4,6 +4,8 @@ const api = axios.create({
     baseURL: `${import.meta.env.VITE_BASE_URL_API}` || "http://localhost:3001",
 });
 
+export default api;
+
 const getAllRevenues = async (): Promise<AxiosResponse> => {
     try {
         const response = await api.get('/api/v1/revenues');
