@@ -34,10 +34,33 @@
   "username": {
     "placeholder": "Username"
   },
+  "email": {
+    "placeholder": "Email"
+  },
+  "profile": {
+    "button": "Profile"
+  },
+  "comingSoon": "Coming soon",
+  "logout": {
+    "button": "Logout"
+  },
   "page": {
     "not": {
       "found": "Page not found"
     }
+  },
+  "login": {
+    "title": "Login",
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Enter your email"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password"
+    },
+    "button": "Login",
+    "error": "Error logging in, invalid username or password"
   },
   "sales": {
     "create": {

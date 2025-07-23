@@ -3,7 +3,7 @@ import client from "../db.js";
 const validateUserCredentials = async (email, password) => {
   try {
     const query = `
-        SELECT * FROM sales_manager.user
+        SELECT id, full_name, email, created_at FROM sales_manager.user
         WHERE email = $1
         AND password = $2
         `;
