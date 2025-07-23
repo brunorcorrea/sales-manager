@@ -49,6 +49,19 @@
       "found": "Página não encontrada"
     }
   },
+  "login": {
+    "title": "Entrar",
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Digite seu e-mail"
+    },
+    "password": {
+      "label": "Senha",
+      "placeholder": "Digite sua senha"
+    },
+    "button": "Entrar",
+    "error": "Erro ao fazer login, verifique suas credenciais"
+  },
   "sales": {
     "create": {
       "button": "Criar Venda"
