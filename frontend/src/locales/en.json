@@ -34,6 +34,16 @@
   "username": {
     "placeholder": "Username"
   },
+  "email": {
+    "placeholder": "Email"
+  },
+  "profile": {
+    "button": "Profile"
+  },
+  "comingSoon": "Coming soon",
+  "logout": {
+    "button": "Logout"
+  },
   "page": {
     "not": {
       "found": "Page not found"

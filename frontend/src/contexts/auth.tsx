@@ -50,10 +50,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   const Logout = () => {
+    const BASE_PATH = import.meta.env.VITE_BASE_PATH_FRONTEND || "/sales-manager/";
     setUser(null);
 
     localStorage.removeItem("@App:user");
     localStorage.removeItem("App:token");
+
+    window.location.href = BASE_PATH;
   };
 
   return <AuthContext.Provider value={{ signed: Boolean(user), user, Login, Logout }}>{children}</AuthContext.Provider>;
