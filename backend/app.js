@@ -10,6 +10,13 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
+app.use((req, res, next) => {
+    res.on('finish', () => {
+        console.log(`${new Date().toISOString().replace('T', ' ').replace('Z', '')}: ${req.method} ${req.url} - ${res.statusCode}`);
+    });
+    next();
+});
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
