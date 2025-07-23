@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { AxiosResponse } from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import api from "../api/Api";
@@ -23,7 +24,7 @@ export const useAuth = () => {
   return context;
 };
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
@@ -44,7 +45,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("@App:user", JSON.stringify(response.data.user));
       localStorage.setItem("@App:token", response.data.token);
       return response;
-    } catch (err) {
+    } catch {
       throw new Error("Erro ao realizar login.");
     }
   };
